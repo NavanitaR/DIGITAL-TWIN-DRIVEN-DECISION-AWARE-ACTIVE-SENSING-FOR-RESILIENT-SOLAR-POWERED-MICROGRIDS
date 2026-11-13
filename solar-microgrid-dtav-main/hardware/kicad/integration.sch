@@ -1,0 +1,211 @@
+EESchema Schematic File Version 4
+LIBS:power
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Solar microgrid integration / provisional"
+Date "2026-11-09"
+Rev "0.2-shared-pv-review"
+Comp "Educational prototype"
+Comment1 "Interface net map only. See POWER_DESIGN.md. Not ERC/PCB signoff."
+$EndDescr
+$Comp
+L Connector_Generic:Conn_01x02 J1
+U 1 1 60000000
+P 1600 1700
+F 0 "J1" H 1680 1700 50 0000 L CNN
+F 1 "PV_COMB" H 1680 1600 50 0000 L CNN
+	1 1600 1700
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	1400 1700 750 1700
+Text Label 750 1700 0 40 ~ 0
+PV_COMB
+Wire Wire Line
+	1400 1800 750 1800
+Text Label 750 1800 0 40 ~ 0
+GND
+$Comp
+L Connector_Generic:Conn_01x05 J2
+U 1 1 60000001
+P 4900 1700
+F 0 "J2" H 4980 1700 50 0000 L CNN
+F 1 "MPPT" H 4980 1600 50 0000 L CNN
+	1 4900 1700
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	4700 1500 4050 1500
+Text Label 4050 1500 0 40 ~ 0
+PV_COMB
+Wire Wire Line
+	4700 1600 4050 1600
+Text Label 4050 1600 0 40 ~ 0
+BAT_SYS
+Wire Wire Line
+	4700 1700 4050 1700
+Text Label 4050 1700 0 40 ~ 0
+GND
+Wire Wire Line
+	4700 1800 4050 1800
+Text Label 4050 1800 0 40 ~ 0
+NTC
+Wire Wire Line
+	4700 1900 4050 1900
+Text Label 4050 1900 0 40 ~ 0
+MPPSET
+$Comp
+L Connector_Generic:Conn_01x03 J3
+U 1 1 60000002
+P 8200 1700
+F 0 "J3" H 8280 1700 50 0000 L CNN
+F 1 "SOLAR_BOOST" H 8280 1600 50 0000 L CNN
+	1 8200 1700
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	8000 1600 7350 1600
+Text Label 7350 1600 0 40 ~ 0
+SOLAR_IN
+Wire Wire Line
+	8000 1700 7350 1700
+Text Label 7350 1700 0 40 ~ 0
+SOLAR12
+Wire Wire Line
+	8000 1800 7350 1800
+Text Label 7350 1800 0 40 ~ 0
+GND
+$Comp
+L Connector_Generic:Conn_01x02 J4
+U 1 1 60000003
+P 1600 3700
+F 0 "J4" H 1680 3700 50 0000 L CNN
+F 1 "PACK" H 1680 3600 50 0000 L CNN
+	1 1600 3700
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	1400 3700 750 3700
+Text Label 750 3700 0 40 ~ 0
+PACK_PLUS
+Wire Wire Line
+	1400 3800 750 3800
+Text Label 750 3800 0 40 ~ 0
+PACK_MINUS
+$Comp
+L Connector_Generic:Conn_01x03 J5
+U 1 1 60000004
+P 4900 3700
+F 0 "J5" H 4980 3700 50 0000 L CNN
+F 1 "BAT_BOOST" H 4980 3600 50 0000 L CNN
+	1 4900 3700
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	4700 3600 4050 3600
+Text Label 4050 3600 0 40 ~ 0
+BAT_SYS
+Wire Wire Line
+	4700 3700 4050 3700
+Text Label 4050 3700 0 40 ~ 0
+BAT12
+Wire Wire Line
+	4700 3800 4050 3800
+Text Label 4050 3800 0 40 ~ 0
+GND
+$Comp
+L Connector_Generic:Conn_01x04 J6
+U 1 1 60000005
+P 8200 3700
+F 0 "J6" H 8280 3700 50 0000 L CNN
+F 1 "SOURCE_TRANSFER" H 8280 3600 50 0000 L CNN
+	1 8200 3700
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	8000 3600 7350 3600
+Text Label 7350 3600 0 40 ~ 0
+SOLAR12
+Wire Wire Line
+	8000 3700 7350 3700
+Text Label 7350 3700 0 40 ~ 0
+BAT12
+Wire Wire Line
+	8000 3800 7350 3800
+Text Label 7350 3800 0 40 ~ 0
+BUS12
+Wire Wire Line
+	8000 3900 7350 3900
+Text Label 7350 3900 0 40 ~ 0
+GND
+$Comp
+L Connector_Generic:Conn_01x03 J7
+U 1 1 60000006
+P 1600 5700
+F 0 "J7" H 1680 5700 50 0000 L CNN
+F 1 "LOAD1" H 1680 5600 50 0000 L CNN
+	1 1600 5700
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	1400 5600 750 5600
+Text Label 750 5600 0 40 ~ 0
+BUS12
+Wire Wire Line
+	1400 5700 750 5700
+Text Label 750 5700 0 40 ~ 0
+L1_PLUS
+Wire Wire Line
+	1400 5800 750 5800
+Text Label 750 5800 0 40 ~ 0
+GND
+$Comp
+L Connector_Generic:Conn_01x03 J8
+U 1 1 60000007
+P 4900 5700
+F 0 "J8" H 4980 5700 50 0000 L CNN
+F 1 "LOAD2" H 4980 5600 50 0000 L CNN
+	1 4900 5700
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	4700 5600 4050 5600
+Text Label 4050 5600 0 40 ~ 0
+BUS12
+Wire Wire Line
+	4700 5700 4050 5700
+Text Label 4050 5700 0 40 ~ 0
+L2_PLUS
+Wire Wire Line
+	4700 5800 4050 5800
+Text Label 4050 5800 0 40 ~ 0
+GND
+$Comp
+L Connector_Generic:Conn_01x03 J9
+U 1 1 60000008
+P 8200 5700
+F 0 "J9" H 8280 5700 50 0000 L CNN
+F 1 "LOAD3" H 8280 5600 50 0000 L CNN
+	1 8200 5700
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	8000 5600 7350 5600
+Text Label 7350 5600 0 40 ~ 0
+BUS12
+Wire Wire Line
+	8000 5700 7350 5700
+Text Label 7350 5700 0 40 ~ 0
+L3_PLUS
+Wire Wire Line
+	8000 5800 7350 5800
+Text Label 7350 5800 0 40 ~ 0
+GND
+Text Notes 650 750 0 70 ~ 0
+Rev2: protected MPPT input=PV_COMB; KPV COM=PV_COMB, NO=SOLAR_IN, NC insulated. PB10 inhibits MPPSET.
+Text Notes 650 7800 0 55 ~ 0
+Module internals/protection passives unresolved. Actual board terminal order must be verified.
+$EndSCHEMATC

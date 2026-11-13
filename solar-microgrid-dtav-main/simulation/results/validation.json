@@ -1,0 +1,110 @@
+{
+  "at_utc": "2026-11-09T17:05:49.611513+00:00",
+  "hardware_tested": false,
+  "browser_visual_qa": "Blocked: browser access host unavailable",
+  "results": [
+    {
+      "check": "backend",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\soory\\Desktop\\solar navu\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "output_tail": "..............................                                           [100%]\n============================== warnings summary ===============================\n.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\soory\\Desktop\\solar navu\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n30 passed, 1 warning in 2.23s\n"
+    },
+    {
+      "check": "native_compile",
+      "exit_code": 0,
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Ifirmware/shared",
+        "firmware/tests/native.c",
+        "-lm",
+        "-o",
+        "tmp/native-check.exe"
+      ],
+      "output_tail": ""
+    },
+    {
+      "check": "native_execute",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\soory\\Desktop\\solar navu\\tmp\\native-check.exe"
+      ],
+      "output_tail": "native sensor conversion, protocol, framing, transfer, low-battery and invalid-command checks passed\n"
+    },
+    {
+      "check": "frontend_tests",
+      "exit_code": 0,
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "test"
+      ],
+      "output_tail": "\n> solar-microgrid-dashboard@1.0.0 test\n> vitest run\n\n\n RUN  v5.1.0 C:/Users/soory/Desktop/solar navu/frontend\n\n\n Test Files  1 passed (1)\n      Tests  2 passed (2)\n   Start at  22:35:23\n   Duration  2.45s (import 52%, environment 43%, tests 4%, transform 1%)\n\n"
+    },
+    {
+      "check": "frontend_build",
+      "exit_code": 0,
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "build"
+      ],
+      "output_tail": "\n> solar-microgrid-dashboard@1.0.0 build\n> tsc -b && vite build\n\nvite v6.4.6 building for production...\ntransforming...\n\u2713 1967 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.54 kB \u2502 gzip:   0.33 kB\ndist/assets/index-4vHc72vC.css   16.36 kB \u2502 gzip:   4.68 kB\ndist/assets/index-mcPlQfg8.js   654.91 kB \u2502 gzip: 194.30 kB\n\n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n\u2713 built in 5.04s\n"
+    },
+    {
+      "check": "frontend_audit",
+      "exit_code": 0,
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "audit",
+        "--audit-level=moderate"
+      ],
+      "output_tail": "found 0 vulnerabilities\n"
+    },
+    {
+      "check": "esp32-s3-sensor-node",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\soory\\Desktop\\solar navu\\.venv\\Scripts\\python.exe",
+        "-m",
+        "platformio",
+        "run",
+        "-d",
+        "firmware/esp32-s3-sensor-node"
+      ],
+      "output_tail": "Processing sensor (platform: espressif32@6.9.0; board: esp32-s3-devkitc-1; framework: arduino)\n--------------------------------------------------------------------------------\nVerbose mode can be enabled via `-v, --verbose` option\nCONFIGURATION: https://docs.platformio.org/page/boards/espressif32/esp32-s3-devkitc-1.html\nPLATFORM: Espressif 32 (6.9.0) > Espressif ESP32-S3-DevKitC-1-N8 (8 MB QD, No PSRAM)\nHARDWARE: ESP32S3 240MHz, 320KB RAM, 8MB Flash\nDEBUG: Current (esp-builtin) On-board (esp-builtin) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)\nPACKAGES: \n - framework-arduinoespressif32 @ 3.20017.241212+sha.dcc1105b \n - tool-esptoolpy @ 1.40501.0 (4.5.1) \n - toolchain-riscv32-esp @ 8.4.0+2021r2-patch5 \n - toolchain-xtensa-esp32s3 @ 8.4.0+2021r2-patch5\nLDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf\nLDF Modes: Finder ~ chain, Compatibility ~ soft\nFound 35 compatible libraries\nScanning dependencies...\nDependency Graph\n|-- DHT sensor library @ 1.4.6\n|-- Adafruit Unified Sensor @ 1.1.15\n|-- SPI @ 2.0.0\n|-- Wire @ 2.0.0\nBuilding in release mode\nRetrieving maximum program size .pio\\build\\sensor\\firmware.elf\nChecking size .pio\\build\\sensor\\firmware.elf\nAdvanced Memory Usage is available via \"PlatformIO Home > Project Inspect\"\nRAM:   [=         ]   6.1% (used 20100 bytes from 327680 bytes)\nFlash: [=         ]   9.4% (used 313029 bytes from 3342336 bytes)\n========================= [SUCCESS] Took 3.98 seconds =========================\n"
+    },
+    {
+      "check": "stm32-central-controller",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\soory\\Desktop\\solar navu\\.venv\\Scripts\\python.exe",
+        "-m",
+        "platformio",
+        "run",
+        "-d",
+        "firmware/stm32-central-controller"
+      ],
+      "output_tail": "Processing central (platform: ststm32@17.6.0; board: blackpill_f411ce; framework: stm32cube)\n--------------------------------------------------------------------------------\nVerbose mode can be enabled via `-v, --verbose` option\nCONFIGURATION: https://docs.platformio.org/page/boards/ststm32/blackpill_f411ce.html\nPLATFORM: ST STM32 (17.6.0) > WeAct Studio BlackPill V2.0 (STM32F411CE)\nHARDWARE: STM32F411CEU6 100MHz, 128KB RAM, 512KB Flash\nDEBUG: Current (blackmagic) External (blackmagic, cmsis-dap, jlink, stlink)\nPACKAGES: \n - framework-stm32cubef4 @ 1.26.2 \n - tool-ldscripts-ststm32 @ 0.2.0 \n - toolchain-gccarmnoneeabi @ 1.70201.0 (7.2.1)\nLDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf\nLDF Modes: Finder ~ chain, Compatibility ~ soft\nFound 52 compatible libraries\nScanning dependencies...\nNo dependencies\nBuilding in release mode\nChecking size .pio\\build\\central\\firmware.elf\nAdvanced Memory Usage is available via \"PlatformIO Home > Project Inspect\"\nRAM:   [          ]   1.4% (used 1784 bytes from 131072 bytes)\nFlash: [=         ]   5.6% (used 29572 bytes from 524288 bytes)\n========================= [SUCCESS] Took 2.45 seconds =========================\n"
+    },
+    {
+      "check": "esp32-c3-wifi-gateway",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\soory\\Desktop\\solar navu\\.venv\\Scripts\\python.exe",
+        "-m",
+        "platformio",
+        "run",
+        "-d",
+        "firmware/esp32-c3-wifi-gateway"
+      ],
+      "output_tail": "Processing gateway (platform: espressif32@6.9.0; board: esp32-c3-devkitm-1; framework: arduino)\n--------------------------------------------------------------------------------\nVerbose mode can be enabled via `-v, --verbose` option\nCONFIGURATION: https://docs.platformio.org/page/boards/espressif32/esp32-c3-devkitm-1.html\nPLATFORM: Espressif 32 (6.9.0) > Espressif ESP32-C3-DevKitM-1\nHARDWARE: ESP32C3 160MHz, 320KB RAM, 4MB Flash\nDEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-builtin, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)\nPACKAGES: \n - framework-arduinoespressif32 @ 3.20017.241212+sha.dcc1105b \n - tool-esptoolpy @ 1.40501.0 (4.5.1) \n - toolchain-riscv32-esp @ 8.4.0+2021r2-patch5\nLDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf\nLDF Modes: Finder ~ chain, Compatibility ~ soft\nFound 34 compatible libraries\nScanning dependencies...\nDependency Graph\n|-- PubSubClient @ 2.8.0\n|-- Preferences @ 2.0.0\n|-- WiFi @ 2.0.0\nBuilding in release mode\nRetrieving maximum program size .pio\\build\\gateway\\firmware.elf\nChecking size .pio\\build\\gateway\\firmware.elf\nAdvanced Memory Usage is available via \"PlatformIO Home > Project Inspect\"\nRAM:   [=         ]  12.6% (used 41172 bytes from 327680 bytes)\nFlash: [======    ]  57.4% (used 752412 bytes from 1310720 bytes)\n========================= [SUCCESS] Took 3.90 seconds =========================\n"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+export type State = {
+  mode?: string;
+  provenance?: string;
+  time?: number;
+  pv?: number[];
+  solar_w?: number;
+  solar_available_w?: number;
+  battery_v?: number;
+  battery_a?: number;
+  soc?: number;
+  load_w?: number;
+  load_powers?: number[];
+  load_voltages?: number[];
+  load_currents?: number[];
+  bus_v?: number;
+  source?: string;
+  state?: string;
+  loads?: boolean[];
+  isolated?: boolean[];
+  faults?: { panel: number; type: string; isolated: boolean }[];
+  clusters?: {
+    voltage: number;
+    current: number;
+    power: number;
+    temperature: number;
+    humidity: number;
+    light: number;
+  }[];
+  runtime_h?: number;
+  charge_w?: number;
+  charge_inhibited?: boolean;
+  pv_bus_v?: number;
+  pv_surplus_w?: number;
+  loss_w?: number;
+  unserved_wh?: number;
+  stale?: boolean;
+  research?: {
+    evsi: number;
+    cost: number;
+    request: boolean;
+    estimate: number;
+    sigma: number;
+    age_s: number;
+    reports: number;
+    requests: number;
+    communication_savings: number;
+    model_error_w: number;
+  };
+  connectivity?: Record<string, boolean | number>;
+  allocation?: string;
+  generation?: number;
+};
+export const fmt = (n: number | undefined, unit = "", digits = 1) =>
+  Number.isFinite(n) ? `${n!.toFixed(digits)}${unit}` : "—";

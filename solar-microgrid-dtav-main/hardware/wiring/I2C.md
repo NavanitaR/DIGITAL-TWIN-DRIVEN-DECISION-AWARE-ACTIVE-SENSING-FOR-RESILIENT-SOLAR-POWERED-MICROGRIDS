@@ -1,0 +1,9 @@
+# INA226 allocation and calibration
+
+There are 13 monitors: six on the S3 bus and seven on the independent STM32 bus. Addresses may repeat across buses. Exact A1/A0 straps and 7-bit addresses are in `ina226_addresses.csv`. INA226 supports sixteen addresses, not just the four combinations exposed by some breakout boards. SDA/SCL strap options may require PCB rework; buy modules exposing both pins or fabricate carriers. No I2C mux is needed with all strap options accessible.
+
+Raw shunt register signed LSB = 2.5 uV; bus LSB = 1.25 mV. I = signed_shunt*2.5e-6/R. P = V*I. Firmware intentionally uses raw registers so no incorrect factory current calibration can affect results. Optional INA current register calibration: CAL = floor(0.00512/(current_LSB*R)); for 0.02ohm, current_LSB=0.0001A gives CAL=2560; power_LSB=25*current_LSB. For 0.01ohm use 0.0002A, CAL=2560. Current register is unused in this release.
+
+0.02ohm at 0.916A dissipates 16.8mW; 0.01ohm at cluster 1.832A dissipates 33.6mW. The assumed 3.358A battery startup current produces about113mW in 0.01ohm; specify 1W, 1%, low-temperature-coefficient four-terminal shunts. INA full-scale +/-81.92mV gives 4.096A / 8.192A respectively. Range is not a branch protection rating. Verify burden voltage and Kelvin routing, no load current through signal ground. Battery monitor sits on PACK+ outside integrated protection, between pack and combined charger/boost node; positive current is discharge. Charger return and boost return go to protected PACK-, never bare cell B-.
+
+Calibrate zero with isolated branches, then >=3 current points using a traceable DMM and resistor load; store slope/offset with date, shunt temperature and uncertainty. Check polarity with a current-limited source. LDR calibration is dark/bright normalized relative intensity, not lux. Compare DHTs to a reference, preserve missing values. Analog module AO must remain <=3.3V.

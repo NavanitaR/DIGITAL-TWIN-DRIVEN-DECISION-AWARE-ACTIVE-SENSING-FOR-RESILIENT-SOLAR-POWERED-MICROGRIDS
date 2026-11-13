@@ -1,0 +1,50 @@
+source_module,source_pin,destination_module,destination_pin,voltage,signal_type,purpose,required_protection,notes
+esp32-s3,GPIO8,I2C SDA,SDA,3.3V logic,digital,I2C SDA,One effective 4.7k pullup pair to 3.3V; remove excess module pullups,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO9,I2C SCL,SCL,3.3V logic,digital,I2C SCL,One effective 4.7k pullup pair to 3.3V; remove excess module pullups,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO12,Ra02 SCK,SCK,3.3V logic,digital,Ra02 SCK,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO13,Ra02 MISO,MISO,3.3V logic,digital,Ra02 MISO,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO11,Ra02 MOSI,MOSI,3.3V logic,digital,Ra02 MOSI,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO10,Ra02 NSS,NSS,3.3V logic,digital,Ra02 NSS,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO14,Ra02 RESET,RESET,3.3V logic,digital,Ra02 RESET,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO4,DHT22 A DATA,DATA,3.3V logic,digital,DHT22 A DATA,4.7k to 3.3V; 100nF local bypass,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO5,DHT22 B DATA,DATA,3.3V logic,digital,DHT22 B DATA,4.7k to 3.3V; 100nF local bypass,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO1,LDR A AO,AO,3.3V logic,analog,LDR A AO,Power module at 3.3V; ensure AO <=3.3V; 1k/100nF filter,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO2,LDR B AO,AO,3.3V logic,analog,LDR B AO,Power module at 3.3V; ensure AO <=3.3V; 1k/100nF filter,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO15,PV1 eFuse EN,EN,3.3V logic,digital,PV1 eFuse EN,Fail-low EN; datasheet UVLO divider + open-drain inhibit; see power design,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO16,PV2 eFuse EN,EN,3.3V logic,digital,PV2 eFuse EN,Fail-low EN; datasheet UVLO divider + open-drain inhibit; see power design,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO17,PV3 eFuse EN,EN,3.3V logic,digital,PV3 eFuse EN,Fail-low EN; datasheet UVLO divider + open-drain inhibit; see power design,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO18,PV4 eFuse EN,EN,3.3V logic,digital,PV4 eFuse EN,Fail-low EN; datasheet UVLO divider + open-drain inhibit; see power design,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO6,PV1 eFuse FLT,FLT,3.3V logic,digital,PV1 eFuse FLT,10k pullup to 3.3V; open-drain input,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO7,PV2 eFuse FLT,FLT,3.3V logic,digital,PV2 eFuse FLT,10k pullup to 3.3V; open-drain input,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO21,PV3 eFuse FLT,FLT,3.3V logic,digital,PV3 eFuse FLT,10k pullup to 3.3V; open-drain input,GPIO identity; verify actual connector silk and board revision
+esp32-s3,GPIO47,PV4 eFuse FLT,FLT,3.3V logic,digital,PV4 eFuse FLT,10k pullup to 3.3V; open-drain input,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PA5,SPI1 SCK shared radio TFT,TFT,3.3V logic,digital,SPI1 SCK shared radio TFT,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PA6,SPI1 MISO radio,radio,3.3V logic,digital,SPI1 MISO radio,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PA7,SPI1 MOSI shared radio TFT,TFT,3.3V logic,digital,SPI1 MOSI shared radio TFT,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PA4,Ra02 NSS,NSS,3.3V logic,digital,Ra02 NSS,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PB0,Ra02 RESET,RESET,3.3V logic,digital,Ra02 RESET,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PB12,TFT CS,CS,3.3V logic,digital,TFT CS,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PB13,TFT DC,DC,3.3V logic,digital,TFT DC,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PB14,TFT RESET,RESET,3.3V logic,digital,TFT RESET,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PB6,I2C1 SCL,SCL,3.3V logic,digital,I2C1 SCL,One effective 4.7k pullup pair to 3.3V; remove excess module pullups,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PB7,I2C1 SDA,SDA,3.3V logic,digital,I2C1 SDA,One effective 4.7k pullup pair to 3.3V; remove excess module pullups,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PA2,UART2 TX to C3 GPIO4,GPIO4,3.3V logic,digital,UART2 TX to C3 GPIO4,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PA3,UART2 RX from C3 GPIO5,GPIO5,3.3V logic,digital,UART2 RX from C3 GPIO5,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PA0,UP button,button,3.3V logic,digital,UP button,Button to GND; internal pull-up; optional 100nF + 1k series,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PA1,DOWN button,button,3.3V logic,digital,DOWN button,Button to GND; internal pull-up; optional 100nF + 1k series,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PB3,LEFT button,button,3.3V logic,digital,LEFT button,Button to GND; internal pull-up; optional 100nF + 1k series,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PB4,RIGHT button,button,3.3V logic,digital,RIGHT button,Button to GND; internal pull-up; optional 100nF + 1k series,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PB5,SELECT button,button,3.3V logic,digital,SELECT button,Button to GND; internal pull-up; optional 100nF + 1k series,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PA8,KEN master relay driver,driver,3.3V logic,digital,KEN master relay driver,100R gate; 100k pulldown; logic MOSFET; flyback; external coil supply,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PA9,KSEL transfer relay driver,driver,3.3V logic,digital,KSEL transfer relay driver,100R gate; 100k pulldown; logic MOSFET; flyback; external coil supply,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PA10,KL1 relay driver,driver,3.3V logic,digital,KL1 relay driver,100R gate; 100k pulldown; logic MOSFET; flyback; external coil supply,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PA11,KL2 relay driver,driver,3.3V logic,digital,KL2 relay driver,100R gate; 100k pulldown; logic MOSFET; flyback; external coil supply,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PA12,KL3 relay driver,driver,3.3V logic,digital,KL3 relay driver,100R gate; 100k pulldown; logic MOSFET; flyback; external coil supply,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PB8,KPV solar converter enable relay driver,driver,3.3V logic,digital,KPV solar converter enable relay driver,100R gate; 100k pulldown; logic MOSFET; flyback; external coil supply,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PB9,Solar qualification sink gate,gate,3.3V logic,digital,Solar qualification sink gate,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+stm32-f411,PB10,MPPT MPPSET inhibit MOSFET gate,gate,3.3V logic,digital,MPPT MPPSET inhibit MOSFET gate,"100ohm gate resistor +100kohm pulldown; NMOS drain to MPPSET2, source charger signal GND",GPIO identity; verify actual connector silk and board revision
+stm32-f411,PB1,PV bus ADC divider 47k/10k,47k/10k,3.3V logic,analog,PV bus ADC divider 47k/10k,47kohm/10kohm divider +100nF; calibrate actual VDDA and ratio,GPIO identity; verify actual connector silk and board revision
+esp32-c3,GPIO4,UART1 RX from STM32 PA2,PA2,3.3V logic,digital,UART1 RX from STM32 PA2,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+esp32-c3,GPIO5,UART1 TX to STM32 PA3,PA3,3.3V logic,digital,UART1 TX to STM32 PA3,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+esp32-c3,GPIO18,USB D- reserved,reserved,3.3V logic,digital,USB D- reserved,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision
+esp32-c3,GPIO19,USB D+ reserved,reserved,3.3V logic,digital,USB D+ reserved,3.3V only; common signal ground,GPIO identity; verify actual connector silk and board revision

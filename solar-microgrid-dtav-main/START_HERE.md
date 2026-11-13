@@ -1,0 +1,11 @@
+# Start here
+
+Four panels form two parallel pairs. The S3 measures both pairs and all four branches, and can inhibit each electronic protection switch. LoRa carries optional telemetry and commands to the STM32. The STM32 measures the battery, sources, bus and three loads and owns source/load relays. The C3 only transports packets between UART and a local MQTT broker. The laptop estimates state and asks useful questions; it is not an electrical protector.
+
+Start in software: follow README, open localhost:5173, keep the mode set to Simulation. Watch source changes and staggered load restoration; use Digital twin to shade a panel or disconnect LoRa. Compare Research strategies, run the experiment script, and inspect CSV results. Simulated, replayed and measured data have explicit labels. Hardware mode stays empty/stale until real packets arrive.
+
+Read docs/safety/COMMISSIONING.md before buying or wiring power parts. This repository supplies buildable firmware and a provisional electrical design; it is not assembly approval. The unknown battery specification, converter modules, board variants and protection carriers must be confirmed. The original PDF is a synopsis; the newer user requirements drive this implementation.
+
+Read in this order: docs/architecture/SYSTEM.md; docs/architecture/ASSUMPTIONS.md; hardware/schematics/POWER_DESIGN.md; hardware/pinouts/PIN_MAPS.md; hardware/wiring/I2C.md; docs/firmware/BUILD_FLASH.md; docs/testing/TEST_PLAN.md; docs/research/DTAV.md.
+
+All four panels feed one protected PV bus. The MPPT input stays connected through its own protected branch; KPV NO enables the solar converter independently and KPV NC is insulated. BQ24650 input regulation reduces charge demand as loads consume PV power; PB10 drives a signal MOSFET to inhibit charging during probe/transfer/droop. PB1 senses PV voltage. No fixed panel split or exclusive input transfer remains. See [Revision 2](docs/architecture/REVISION_2.md) for coordination, wiring and commissioning requirements. Controller/coil adapters remain external. The physical stage is not yet commissioned.

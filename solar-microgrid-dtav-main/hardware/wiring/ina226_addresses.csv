@@ -1,0 +1,14 @@
+bus,name,address,A1,A0,shunt_ohms,shunt_power_W,fullscale_A,monitor_supply,placement
+S3,Cluster A,0x40,GND,GND,0.01,1,8.192,3.3V,high-side Kelvin; positive panel->combiner / battery->system
+S3,Cluster B,0x41,GND,VS,0.01,1,8.192,3.3V,high-side Kelvin; positive panel->combiner / battery->system
+S3,PV1,0x44,VS,GND,0.02,1,4.096,3.3V,high-side Kelvin; positive panel->combiner / battery->system
+S3,PV2,0x45,VS,VS,0.02,1,4.096,3.3V,high-side Kelvin; positive panel->combiner / battery->system
+S3,PV3,0x48,SDA,GND,0.02,1,4.096,3.3V,high-side Kelvin; positive panel->combiner / battery->system
+S3,PV4,0x49,SDA,VS,0.02,1,4.096,3.3V,high-side Kelvin; positive panel->combiner / battery->system
+STM32,Battery signed,0x40,GND,GND,0.01,1,8.192,3.3V,high-side Kelvin; positive panel->combiner / battery->system
+STM32,Main bus,0x41,GND,VS,0.01,1,8.192,3.3V,high-side Kelvin; positive panel->combiner / battery->system
+STM32,Solar 12V,0x44,VS,GND,0.01,1,8.192,3.3V,high-side Kelvin; positive panel->combiner / battery->system
+STM32,Battery boost,0x45,VS,VS,0.01,1,8.192,3.3V,high-side Kelvin; positive panel->combiner / battery->system
+STM32,Load 1,0x48,SDA,GND,0.01,1,8.192,3.3V,high-side Kelvin; positive panel->combiner / battery->system
+STM32,Load 2,0x49,SDA,VS,0.01,1,8.192,3.3V,high-side Kelvin; positive panel->combiner / battery->system
+STM32,Load 3,0x4c,SCL,GND,0.01,1,8.192,3.3V,high-side Kelvin; positive panel->combiner / battery->system

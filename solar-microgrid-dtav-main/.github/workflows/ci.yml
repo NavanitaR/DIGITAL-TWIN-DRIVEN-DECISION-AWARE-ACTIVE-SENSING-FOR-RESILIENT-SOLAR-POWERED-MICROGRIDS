@@ -1,0 +1,30 @@
+name: Software verification
+on: [push, pull_request]
+jobs:
+  host:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22', cache: npm, cache-dependency-path: frontend/package-lock.json}
+      - run: pip install -r backend/requirements.txt -r scripts/requirements-docs.txt
+      - run: pytest -q
+      - run: mkdir -p tmp && python scripts/smoke_server.py
+      - run: gcc -std=c11 -Wall -Wextra -Ifirmware/shared firmware/tests/native.c -lm -o /tmp/native-test && /tmp/native-test
+      - run: npm ci && npm test && npm run build
+        working-directory: frontend
+      - run: python scripts/experiment.py --seconds 300 --seeds 5
+      - run: python scripts/regenerate_design.py --skip-workbook
+      - run: pytest -q backend/tests/test_documentation_consistency.py
+  firmware:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: {target: [esp32-s3-sensor-node, stm32-central-controller, esp32-c3-wifi-gateway]}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install platformio==6.2.0
+      - run: pio run -d firmware/${{ matrix.target }}

@@ -1,0 +1,4 @@
+reportlab>=5,<6
+openpyxl>=3.1,<4
+pypdf>=6,<8
+# BOM authoring uses the provided @oai/artifact-tool Node runtime.

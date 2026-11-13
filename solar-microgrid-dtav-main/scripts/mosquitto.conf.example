@@ -1,0 +1,6 @@
+# Simulation does not need MQTT. This example is loopback-only.
+# For physical C3 access, configure a trusted LAN listener plus password_file
+# and firewall rules. Do not blindly expose anonymous access on all interfaces.
+listener 1883 127.0.0.1
+allow_anonymous true
+persistence false

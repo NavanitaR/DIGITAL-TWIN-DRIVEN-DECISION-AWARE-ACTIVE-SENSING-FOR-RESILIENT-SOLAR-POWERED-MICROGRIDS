@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="495" height="355" preserveAspectRatio="xMinYMin meet" viewBox="0 0 495 355" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="495" height="355"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-355)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="5" y="300" width="105" height="45" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1; fill: rgb(93%,96%,94%); fill-rule: evenodd;"/>
+			<text x="12" y="329" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,658) scale(1,-1)">PV1-PV4</text>
+			<text x="12" y="310" style="font-family: Helvetica; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,620) scale(1,-1)">Four protected branches</text>
+			<rect x="130" y="300" width="110" height="45" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1; fill: rgb(93%,96%,94%); fill-rule: evenodd;"/>
+			<text x="137" y="329" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,658) scale(1,-1)">A+B combiner</text>
+			<text x="137" y="310" style="font-family: Helvetica; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,620) scale(1,-1)">Protected PV_COMB</text>
+			<path d="M 110,322 L 130,322 Z" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 240,322 L 415,322 Z" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<circle cx="260" cy="322" r="3" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; fill: rgb(19%,37%,30%); fill-rule: evenodd;"/>
+			<path d="M 260,322 L 260,280 Z" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 260,280 L 225,280 Z" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 225,280 L 225,255 Z" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 415,322 L 415,255 Z" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<rect x="160" y="210" width="130" height="45" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1; fill: rgb(93%,96%,94%); fill-rule: evenodd;"/>
+			<text x="167" y="239" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,478) scale(1,-1)">MPPT charger</text>
+			<text x="167" y="220" style="font-family: Helvetica; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,440) scale(1,-1)">DPM + 1S CC/CV + NTC</text>
+			<rect x="340" y="210" width="145" height="45" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1; fill: rgb(93%,96%,94%); fill-rule: evenodd;"/>
+			<text x="347" y="239" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,478) scale(1,-1)">KPV NO -&gt; boost</text>
+			<text x="347" y="220" style="font-family: Helvetica; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,440) scale(1,-1)">Regulated SOLAR12</text>
+			<rect x="5" y="205" width="120" height="50" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1; fill: rgb(93%,96%,94%); fill-rule: evenodd;"/>
+			<text x="12" y="239" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,478) scale(1,-1)">PB10 signal MOSFET</text>
+			<text x="12" y="215" style="font-family: Helvetica; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,430) scale(1,-1)">Pull MPPSET low to pause</text>
+			<path d="M 125,230 L 160,230 Z" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<text x="7" y="185" style="font-family: Helvetica; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,370) scale(1,-1)">PB1 senses PV bus locally</text>
+			<path d="M 225,210 L 225,160 Z" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<rect x="160" y="115" width="130" height="45" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1; fill: rgb(93%,96%,94%); fill-rule: evenodd;"/>
+			<text x="167" y="144" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,288) scale(1,-1)">Protected 1S pack</text>
+			<text x="167" y="125" style="font-family: Helvetica; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,250) scale(1,-1)">Fuse + signed monitor</text>
+			<path d="M 290,137 L 340,137 Z" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<rect x="340" y="115" width="145" height="45" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1; fill: rgb(93%,96%,94%); fill-rule: evenodd;"/>
+			<text x="347" y="144" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,288) scale(1,-1)">Battery boost</text>
+			<text x="347" y="125" style="font-family: Helvetica; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,250) scale(1,-1)">Regulated BAT12</text>
+			<path d="M 415,210 L 415,190 Z" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<text x="345" y="177" style="font-family: Helvetica; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,354) scale(1,-1)">SOLAR12 -&gt; KSEL NC</text>
+			<path d="M 415,115 L 415,95 Z" style="stroke: rgb(19%,37%,30%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<text x="345" y="82" style="font-family: Helvetica; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,164) scale(1,-1)">BAT12 -&gt; KSEL NO</text>
+			<text x="5" y="52" style="font-family: Helvetica; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,104) scale(1,-1)">KSEL COM -&gt; KEN NO master -&gt; bus monitor -&gt; KL1/KL2/KL3 -&gt; loads</text>
+			<text x="5" y="30" style="font-family: Helvetica; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,60) scale(1,-1)">MPPT and solar boost share PV only with the specified regulation/current limits.</text>
+			<text x="5" y="13" style="font-family: Helvetica; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,26) scale(1,-1)">Signal/protection interface drawing. Common DC return and branch fuses are required.</text>
+		</g>
+	</g>
+</svg>

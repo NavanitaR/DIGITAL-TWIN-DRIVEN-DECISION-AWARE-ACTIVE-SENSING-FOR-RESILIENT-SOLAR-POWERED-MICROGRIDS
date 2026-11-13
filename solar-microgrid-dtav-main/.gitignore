@@ -1,0 +1,17 @@
+.venv/
+**/.pio/
+**/__pycache__/
+.pytest_cache/
+node_modules/
+frontend/dist/
+*.db
+*.db-shm
+*.db-wal
+.env
+secrets.h
+*.log
+tmp/
+*.exe
+*.tsbuildinfo
+*.inspect.ndjson
+Solar_Microgrid_Major_Project_Final_Draft.pdf
